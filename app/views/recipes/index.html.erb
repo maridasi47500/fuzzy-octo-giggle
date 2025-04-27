@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<div id="recipes">
+  <% @recipes.page(params[:page]).to_a.each_slice(5).each do |recipes| %>
+<div style="width:49%;display: flex; margin: 0 -5px">
+<%recipes.each do |recipe|%>
+    <a href="<%=recipe_path(recipe)%>" style=" margin: 0 5px">
+        <img src="/uploads/<%=recipe.pic%>"/>
+    </a>
+<%end%>
+</div>
+<%end%>
+</div>
+<%= paginate @recipes %>
+
+<%= link_to "New recipe", new_recipe_path %>

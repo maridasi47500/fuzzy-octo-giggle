@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @recipe.name %></h1>
+<p><%= @recipe.subtitle %></p>
+
+<h2><%= @recipe.name %></h2>
+<p><%= @recipe.description %></p>
+<p>portions : <%=@recipe.portions%> personnes</p>
+<p>temps de preparation : <%=@recipe.minute%> minutes</p>
+<p>ustensiles</p>
+<p>ingredients</p>
+<p>preparation</p>
+<p>type de plat:<%=@recipe.typeplat.name%></p>
+
+<div>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <%= link_to "Back to recipes", recipes_path %>
+
+  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+</div>
